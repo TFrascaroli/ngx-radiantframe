@@ -15,6 +15,10 @@
       "ngx-radiantframe": [
         "dist/ngx-radiantframe/ngx-radiantframe",
         "dist/ngx-radiantframe"
+      ],
+      "ngx-radiantframe-yt": [
+        "dist/ngx-radiantframe-yt/ngx-radiantframe-yt",
+        "dist/ngx-radiantframe-yt"
       ]
     },
     "declaration": false,

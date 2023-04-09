@@ -1,20 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MediaProvider } from './media-provider.enum';
 
 @Component({
-  selector: 'lib-ngx-radiantframe',
+  selector: 'ngx-radiantframe',
   template: `
-    <p>
-      ngx-radiantframe works!
-    </p>
+    <ng-container [ngSwitch]="provider">
+      <ngx-radiantframe-yt *ngSwitchCase="'YOUTUBE'" [source]="source" [width]="width" [height]="height"></ngx-radiantframe-yt>
+      <!-- Add more cases for other providers here -->
+    </ng-container>
   `,
-  styles: [
-  ]
 })
-export class NgxRadiantframeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class NgxRadiantframeComponent {
+  @Input() width: string | number = '640';
+  @Input() height: string | number = '480';
+  @Input() source: string = "";
+  @Input() provider: MediaProvider = MediaProvider.NONE;
 }
